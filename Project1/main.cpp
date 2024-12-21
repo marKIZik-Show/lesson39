@@ -31,4 +31,9 @@ int main() {
 	Schedule Nazar;
 	Nazar.addevent(Date(2008, 11, 11), "Birthday");
 	Nazar.showSchedule();
+	cout << "------------------------------\n";
+	cout << "Find: " << Date(2011, 1, 2) << " : ";
+	Nazar.findByDate(Date(2011, 1, 2));
+	cout << "Find: " << Date();
+	Nazar.findByDate(Date());
 }

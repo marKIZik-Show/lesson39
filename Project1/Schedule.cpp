@@ -26,10 +26,39 @@ void Schedule::showSchedule() const
 
 void Schedule::findByDate(Date d) const
 {
+	auto p = book.find(d);
+	if (p == book.end())
+	{
+		cout << "Not Found" << endl;
+
+	}
+	else {
+		for (string event : p->second)
+		{
+			cout << event << ",";
+		}
+		cout << endl;
+	}
 }
 
 void Schedule::findByEvent(string event) const
 {
+	bool isFound = false;
+	for (auto node : book)
+	{
+		for (int i = 0; i < node.second.size() ; i++)
+		{
+			if (event == node.second[i])
+			{
+				cout << "Date: " << node.first << endl;
+				isFound = true; 
+				break;
+			}
+		}
+	}
+	if (!isFound) {
+		cout << "Not Found" << endl;
+	}
 }
 
 void Schedule::delEvent(Date d, string event)

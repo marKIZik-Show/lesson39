@@ -63,4 +63,22 @@ void Schedule::findByEvent(string event) const
 
 void Schedule::delEvent(Date d, string event)
 {
+	auto p = book.find(d);
+	if (p == book.end()) {
+		cout << "Not Found" << endl;
+	}
+	else {
+		for (int i = 0; i < p->second.size(); i++)
+		{
+			if (event == p->second[i])
+			{
+				cout << "Delete: " << p->first << " " << p->second[i] << endl;
+				p->second.erase(p->second.begin() + i);
+				break;
+			}
+		}
+		if (p->second.size() == 0) {
+			book.erase(p);
+		}
+	}
 }

@@ -36,4 +36,9 @@ int main() {
 	Nazar.findByDate(Date(2011, 1, 2));
 	cout << "Find: " << Date();
 	Nazar.findByDate(Date());
+	cout << "------------------------------\n";
+	cout << "Find cpp: ";
+	Nazar.findByEvent("cpp");
+	cout << "Find c#: ";
+	Nazar.findByEvent("c#");
 }
